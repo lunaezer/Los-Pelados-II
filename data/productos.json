@@ -1,0 +1,7 @@
+[
+  { "nombre": "cucurucho", "precio": 50, "maxGustos": 2 },
+  { "nombre": "vasito", "precio": 60, "maxGustos": 2 },
+  { "nombre": "1/4 kilo", "precio": 100, "maxGustos": 3 },
+  { "nombre": "1/2 kilo", "precio": 180, "maxGustos": 4 },
+  { "nombre": "1 kilo", "precio": 350, "maxGustos": 5 }
+]

@@ -1,0 +1,114 @@
+:root {
+  --purple: #e8dff5;
+  --red: #fce1e4;
+  --yellow: #fcf4dd;
+  --green: #ddedea;
+  --blue: #daeaf6;
+  --dark: #121619ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--dark);
+  background-color: var(--yellow);
+  padding: 8px;
+}
+
+h1 {
+  font-weight: 600;
+  text-align: center;
+  font-size: 36px;
+}
+
+.productosContainer {
+  margin: 16px 0px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: center;
+}
+
+.productos {
+  background-color: var(--green);
+  list-style: none;
+  list-style-position: inside;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 20px;
+  line-height: 2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.campos {
+  display: flex;
+  column-gap: 8px;
+  border: 0;
+  align-items: center;
+}
+
+.campos input,
+.campos select {
+  width: 10%;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--dark);
+  background-color: var(--red);
+  border-radius: 16px;
+  border: 1px solid var(--dark);
+  padding: 8px;
+}
+
+.sabores {
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.sabor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 4px;
+  background-color: var(--red);
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.seleccionado {
+  background-color: var(--green);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-size: 24px;
+  background-color: var(--purple);
+  border: 1px solid var(--dark);
+  padding: 0px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Heladería "Los Pelados"</title>
+  </head>
+  <body>
+    <h1>Heladería "Los Pelados"</h1>
+
+    <div class="productosContainer">
+      <ul class="productos" id="productos"></ul>
+    </div>
+    <h2>Pedido</h2>
+    <form class="pedido">
+      <fieldset class="campos">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" />
+        <label for="producto">Producto:</label>
+        <select name="producto" id="producto"></select>
+        <label for="cantGustos">Gustos:</label>
+        <select name="" id="cantGustos"></select>
+      </fieldset>
+      <h3>Sabores (restantes: <span id="saboresRestantes"></span>)</h3>
+      <div class="sabores" id="sabores"></div>
+      <div class="buttonContainer">
+        <div id="hacerPedido" class="button"><span>Hacer pedido</span></div>
+      </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="socket.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
