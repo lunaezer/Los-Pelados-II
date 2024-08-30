@@ -54,10 +54,7 @@ function clickSabor(e) {
   let seleccionado = saboresSeleccionados.indexOf(sabor) !== -1;
   let restantes = parseInt(saboresRestantes.innerText);
   if (seleccionado) {
-    saboresSeleccionados = saboresSeleccionados.splice(
-      saboresSeleccionados.indexOf(sabor),
-      1
-    );
+    saboresSeleccionados = saboresSeleccionados.filter((s) => s !== sabor);
     saboresRestantes.innerText = restantes + 1;
     saborDiv.classList.remove("seleccionado");
   } else if (restantes > 0) {
