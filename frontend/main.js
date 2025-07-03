@@ -1,3 +1,5 @@
+connect2Server();
+
 const saboresContainer = document.getElementById("sabores");
 const productosContainer = document.getElementById("productos");
 const nombreInput = document.getElementById("nombre");
