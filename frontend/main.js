@@ -1,5 +1,3 @@
-connect2Server();
-
 const saboresContainer = document.getElementById("sabores");
 const productosContainer = document.getElementById("productos");
 const nombreInput = document.getElementById("nombre");
@@ -9,6 +7,8 @@ const saboresRestantes = document.getElementById("saboresRestantes");
 const hacerPedido = document.getElementById("hacerPedido");
 let productosDisponibles;
 let saboresSeleccionados = [];
+
+connect2Server();
 
 function limpiarSabores() {
   saboresSeleccionados = [];
@@ -80,7 +80,7 @@ function enviarPedido() {
   let nombre = nombreInput.value;
   let restantes = parseInt(saboresRestantes.innerText);
   if (producto !== "" && nombre !== "" && restantes === 0) {
-    postData("pedido", { producto, sabores, nombre }, (response) => {
+    postEvent("pedido", { producto, sabores, nombre }, (response) => {
       if (response.ok) {
         alert("Pedido enviado correctamente");
         limpiarPedido();
@@ -99,7 +99,7 @@ productoSelect.addEventListener("change", actualizarCantGustos);
 
 hacerPedido.addEventListener("click", enviarPedido);
 
-fetchData("sabores", (sabores) => {
+getEvent("sabores", (sabores) => {
   for (let i = 0; i < sabores.length; i++) {
     let sabor = sabores[i];
     const saborDiv = document.createElement("div");
@@ -109,7 +109,7 @@ fetchData("sabores", (sabores) => {
     saboresContainer.appendChild(saborDiv);
   }
 });
-fetchData("productos", (productos) => {
+getEvent("productos", (productos) => {
   productosDisponibles = productos;
   for (let i = 0; i < productos.length; i++) {
     let producto = productos[i];
