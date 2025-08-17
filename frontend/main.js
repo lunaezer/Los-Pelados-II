@@ -5,8 +5,13 @@ const productoSelect = document.getElementById("producto");
 const cantGustosSelect = document.getElementById("cantGustos");
 const saboresRestantes = document.getElementById("saboresRestantes");
 const hacerPedido = document.getElementById("hacerPedido");
+const popup = document.getElementById("popup");
 let productosDisponibles;
 let saboresSeleccionados = [];
+
+popup.querySelector(".button").addEventListener("click", function () {
+  popup.close();
+});
 
 connect2Server();
 
@@ -82,14 +87,19 @@ function enviarPedido() {
   if (producto !== "" && nombre !== "" && restantes === 0) {
     postEvent("pedido", { producto, sabores, nombre }, (response) => {
       if (response.ok) {
-        alert("Pedido enviado correctamente");
+        popup.querySelector(".content").textContent =
+          "Pedido enviado correctamente";
+        popup.showModal();
         limpiarPedido();
       } else {
-        alert("Error al enviar el pedido");
+        popup.querySelector(".content").textContent =
+          "Error al enviar el pedido";
+        popup.showModal();
       }
     });
   } else {
-    alert("Complete todos los campos");
+    popup.querySelector(".content").textContent = "Complete todos los campos";
+    popup.showModal();
   }
 }
 
