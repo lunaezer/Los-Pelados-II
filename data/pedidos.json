@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "producto": "cucurucho",
+    "sabores": [
+      "Chocolate Kinder"
+    ],
+    "nombre": "Benja"
+  }
+]
